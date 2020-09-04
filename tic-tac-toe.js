@@ -14,7 +14,8 @@ window.addEventListener("DOMContentLoaded", event => {
     const s6 = document.getElementById('square-6');
     const s7 = document.getElementById('square-7');
     const s8 = document.getElementById('square-8');
-    const newGame = document.getElementById()
+    const newGame = document.getElementById('new-game-button');
+    const giveUp = document.getElementById('give-up-button');
     
    
     
@@ -75,4 +76,23 @@ window.addEventListener("DOMContentLoaded", event => {
             } 
     }
 }
+
+newGame.addEventListener("click", event =>{
+    if (head.innerHTML === ""){
+        return
+    } else {
+        window.location.reload();
+    }
+})
+
+giveUp.addEventListener("click", event => {
+    if (count % 2 === 0){
+        head.innerHTML = "O's WIN! you quitter!"
+        return;
+    } else{
+    head.innerHTML = "X's WIN! you quitter!"
+    return;
+    }
+})
+
 });
